@@ -1,0 +1,25 @@
+{
+  "browser": "153.0.8010.0",
+  "results": [
+    {
+      "test": "Cambios online/offline del navegador",
+      "result": "passed"
+    },
+    {
+      "test": "GPS emulado, marcador, marcar lugar, zoom y limpiar",
+      "result": "passed",
+      "gps": "coordenadas proporcionadas por automatización; no sensor real"
+    },
+    {
+      "test": "Ubicación denegada: error controlado",
+      "result": "passed"
+    },
+    {
+      "test": "BLE sin soporte/adapter: mensaje visible",
+      "result": "passed",
+      "realBLEScan": "pendiente de hardware"
+    }
+  ],
+  "pageErrors": [],
+  "tiles": "no se valida acceso real a teselas OpenStreetMap"
+}

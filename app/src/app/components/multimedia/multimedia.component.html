@@ -1,0 +1,17 @@
+<ion-card><ion-card-header><ion-card-title>Audio de concentración</ion-card-title></ion-card-header><ion-card-content>
+  <p>Tono suave de 20 segundos. Ajusta el volumen de tu dispositivo.</p>
+  <audio #audio src="assets/audio/tono-suave.wav" preload="metadata" [loop]="repetir" (loadedmetadata)="metadatos()" (timeupdate)="actualizar()" (play)="reproduciendo.set(true)" (pause)="reproduciendo.set(false)" (ended)="reproduciendo.set(false)" (error)="errorAudio.set('No se pudo cargar el archivo de audio.')"></audio>
+  <ion-button (click)="reproducir()" [disabled]="reproduciendo()">Reproducir audio</ion-button>
+  <ion-button (click)="pausar()" [disabled]="!reproduciendo()">Pausar audio</ion-button>
+  <ion-button fill="outline" (click)="detener()">Detener audio</ion-button>
+  <ion-range label="Progreso del audio" [min]="0" [max]="duracion() || 20" [value]="tiempo()" [disabled]="!duracion()" (ionChange)="mover($event)"></ion-range>
+  <p>{{ tiempo() | number:'1.0-0' }} / {{ duracion() | number:'1.0-0' }} segundos</p>
+  <ion-toggle [(ngModel)]="repetir">Repetir audio</ion-toggle>
+  @if (errorAudio()) { <p role="alert">{{ errorAudio() }}</p> }
+</ion-card-content></ion-card>
+<ion-card><ion-card-header><ion-card-title>Foto de apuntes</ion-card-title></ion-card-header><ion-card-content>
+  <ion-button (click)="capturar()" [disabled]="capturando()">{{ capturando() ? 'Abriendo cámara…' : 'Capturar foto' }}</ion-button>
+  <p>En Android abre la cámara; en web el navegador puede permitir tomar una foto o seleccionar una imagen. La vista previa se pierde al recargar.</p>
+  @if (foto()) { <img [src]="foto()" alt="Vista previa del apunte" style="max-width:100%;max-height:300px;object-fit:contain"><ion-button fill="outline" (click)="foto.set('')">Quitar foto</ion-button> }
+  @if (errorFoto()) { <p role="alert">{{ errorFoto() }}</p> }
+</ion-card-content></ion-card>

@@ -1,0 +1,23 @@
+{
+  "browser": "153.0.8010.0",
+  "results": [
+    {
+      "test": "Audio WAV real: reproducir, pausar, detener y mover progreso con teclado",
+      "result": "passed"
+    },
+    {
+      "test": "Pausar al cambiar de pantalla",
+      "result": "passed"
+    },
+    {
+      "test": "Audio local offline en aplicación abierta",
+      "result": "passed"
+    },
+    {
+      "test": "Plugin Camera web: selección y vista previa de archivo PNG de prueba y quitar",
+      "result": "passed",
+      "physicalCamera": "no probada"
+    }
+  ],
+  "pageErrors": []
+}

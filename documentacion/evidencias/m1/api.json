@@ -1,0 +1,43 @@
+{
+  "browser": "153.0.8010.0",
+  "results": [
+    {
+      "test": "API pública sin interceptar",
+      "result": "GET no disponible; error visible",
+      "error": [
+        "No se pudieron cargar los recursos. Revisa tu conexión y vuelve a intentar."
+      ]
+    },
+    {
+      "test": "GET, detalle y regreso con API controlada",
+      "result": "passed"
+    },
+    {
+      "test": "POST y validación de formulario con API controlada",
+      "result": "passed"
+    },
+    {
+      "test": "GET y POST fallidos controlados: errores visibles",
+      "result": "passed"
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://jsonplaceholder.typicode.com/posts?_limit=6",
+      "body": null
+    },
+    {
+      "method": "GET",
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "body": null
+    },
+    {
+      "method": "POST",
+      "url": "https://jsonplaceholder.typicode.com/posts",
+      "body": "{\"title\":\"Estudio de Angular\",\"body\":\"Repasar rutas por 25 minutos\",\"userId\":1}"
+    }
+  ],
+  "pageErrors": [],
+  "apiSuccessTests": "interceptados; no demuestran acceso real a la API pública"
+}

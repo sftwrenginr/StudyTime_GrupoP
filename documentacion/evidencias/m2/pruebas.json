@@ -1,0 +1,30 @@
+{
+  "browser": "153.0.8010.0",
+  "results": [
+    {
+      "test": "Crear sesión",
+      "result": "passed"
+    },
+    {
+      "test": "Editar, completar y persistir al recargar",
+      "result": "passed"
+    },
+    {
+      "test": "Temporizador: inicio, pausa, continuación y reinicio",
+      "result": "passed"
+    },
+    {
+      "test": "Crear offline en app abierta y conservar después de recarga online",
+      "result": "passed"
+    },
+    {
+      "test": "Deslizar y eliminar con confirmación",
+      "result": "passed"
+    },
+    {
+      "test": "Pull-to-refresh por gesto táctil",
+      "result": "passed"
+    }
+  ],
+  "pageErrors": []
+}
