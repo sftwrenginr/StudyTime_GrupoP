@@ -1,0 +1,11 @@
+{
+  "run_id": 37371974148,
+  "commit": "14616d7b401d148c4f70f1875cc031383a8d3311",
+  "artifact_id": 11370717990,
+  "artifact_sha256": "9a2d4f59e982c0c6ce9a1ddab94683434d85a48f3d84d69502fb69515517b94f",
+  "apk_sha256": "002f998de6f19324b875e767743bc5f9ba0c464ac3787ee67547e859ce6bc524",
+  "apk_bytes": 10897716,
+  "zip_integrity": "passed",
+  "android_job": "success",
+  "physical_installation": "not performed"
+}

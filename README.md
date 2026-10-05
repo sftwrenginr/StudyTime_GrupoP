@@ -8,9 +8,9 @@ Código integrado y validado parcialmente en Chromium 153 y Node 24.19.0. `npm r
 
 La API pública no fue accesible desde el entorno de prueba: GET/POST exitosos se comprobaron con respuestas interceptadas; el fallo real mostró el mensaje previsto. GPS se validó con ubicación emulada. Cámara web se validó seleccionando un PNG de prueba. El escaneo BLE, GPS y cámara con hardware físico siguen pendientes. El mapa funciona en sus controles y marcadores; no se acredita la descarga de teselas externas.
 
-El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. El workflow propuesto prepara Java 21 y un APK debug; está en cola en GitHub.
+El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. GitHub Actions compiló correctamente con Java 21 y publicó el APK debug. El artefacto `studytime-android-debug` está disponible en la ejecución enlazada abajo; todavía no se instaló en un teléfono.
 
-**GitHub: avance publicado en [`studytime/desarrollo`](https://github.com/sftwrenginr/StudyTime_GrupoP/tree/studytime/desarrollo).** [Revisión #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) abierta como borrador. La conexión de escritura está habilitada; Actions fue iniciado y sus resultados siguen pendientes. `main` conserva la documentación original mientras se revisa el avance.
+**GitHub: el [PR #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) fue aceptado y la aplicación está en `main`.** La [ejecución de main](https://github.com/sftwrenginr/StudyTime_GrupoP/actions/runs/37371974148) completó correctamente el job Android y publicó el artefacto. El job web fue cancelado y se solicitó reintentar únicamente ese trabajo. La compilación, lint, cuatro pruebas BLE y cinco suites web pasaron nuevamente de forma local. El registro de integridad del APK está en [android-apk.json](documentacion/evidencias/android-apk.json).
 
 ## Equipo y distribución académica
 
@@ -33,7 +33,7 @@ npm ci
 npx ionic serve
 ```
 
-Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requieren conexión para instalar dependencias. El avance se puede obtener con `git clone --branch studytime/desarrollo https://github.com/sftwrenginr/StudyTime_GrupoP.git`.
+Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requieren conexión para instalar dependencias. El avance se puede obtener con `git clone --branch main https://github.com/sftwrenginr/StudyTime_GrupoP.git`.
 
 ```bash
 npm run build
@@ -105,9 +105,11 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 
 ![Vista previa de archivo PNG de prueba, no captura física](documentacion/capturas/m4/02-imagen-prueba.png)
 
+[Presentación de defensa](documentacion/presentacion/Presentacion_StudyTime.pptx) · [Guía por integrante](documentacion/GUIA_DEFENSA.md) · [Pruebas pendientes en Android](documentacion/PRUEBAS_ANDROID.md). El informe Word conserva el estado previo a aceptar el PR #1.
+
 ## Automatización preparada para GitHub
 
-`.github/workflows/studytime.yml` define dos trabajos: build/lint y pruebas web con evidencias, y compilación Android debug. Los jobs tienen acceso de lectura al repositorio. El workflow no publica un sitio, no firma un APK de producción y fue iniciado en GitHub y sus resultados siguen pendientes.
+`.github/workflows/studytime.yml` define dos trabajos: build/lint y pruebas web con evidencias, y compilación Android debug. Los jobs tienen acceso de lectura al repositorio. El workflow no publica un sitio, no firma un APK de producción y generó el APK debug en GitHub. El resultado del reintento web sigue pendiente.
 
 ## Antecedentes
 
