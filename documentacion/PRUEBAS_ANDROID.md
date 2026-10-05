@@ -2,6 +2,10 @@
 
 Esta guía define pruebas reproducibles. Todos los casos de teléfono están pendientes. No se dispone de un dispositivo conectado en esta sesión. Las pruebas automatizadas web y de plugin controlado no certifican sensores físicos.
 
+## APK disponible
+
+El job Android del [run 37371974148](https://github.com/sftwrenginr/StudyTime_GrupoP/actions/runs/37371974148) terminó correctamente para el commit `14616d7b401d148c4f70f1875cc031383a8d3311`. Publicó `studytime-android-debug`. La descarga y la integridad del APK se comprobaron; las huellas están en `evidencias/android-apk.json`. La instalación y todos los casos físicos de esta guía siguen pendientes.
+
 ## Obtención de la aplicación
 
 Abrir GitHub Actions y seleccionar una ejecución satisfactoria de la versión que se va a probar. Si el trabajo Android termina correctamente, descargar el artefacto `studytime-android-debug`, descomprimirlo y localizar `app-debug.apk`. Si el trabajo continúa en cola o falla, todavía no hay un APK acreditado. La firma debug sirve para pruebas, no para distribución de producción.

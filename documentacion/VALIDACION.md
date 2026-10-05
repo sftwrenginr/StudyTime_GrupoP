@@ -20,8 +20,8 @@ Fecha: 5 de octubre de 2026. Entorno: Node 24.19.0, npm 11.9.0 y Chromium 153.0.
 | BLE | Estado sin soporte/adapter correctamente informado | Escaneo de periférico físico pendiente |
 | Audio | WAV reproducido, pausa/stop/progreso y salida de pantalla pasaron | No prueba subjetiva de calidad de sonido |
 | Cámara | Selección, carga y retirada de PNG mediante Camera web pasaron | No captura con lente físico ni prueba de permisos Android |
-| Android | `cap add` y `cap sync` pasaron | Falta SDK/JDK adecuado para APK local; no prueba nativa |
-| GitHub | PR #1 aceptado y código en main; Actions iniciado | Jobs web y Android en cola; no resultado CI ni APK acreditado |
+| Android | `cap add` y `cap sync` pasaron | APK debug compilado en GitHub; integridad del ZIP/APK comprobada; instalación física pendiente |
+| GitHub | PR #1 aceptado y código en main; Actions iniciado | Android exitoso con artefacto; web cancelado y reintento solicitado |
 
 Las cinco suites volvieron a pasar en conjunto después de integrar todos los módulos. Tras corregir la cancelación BLE, pasaron cuatro pruebas específicas con el plugin controlado, build, lint y la suite Entorno. Los resultados JSON y capturas se generan desde `app/scripts/`. Los registros distinguen los datos controlados de los físicos y remotos.
 
@@ -40,13 +40,13 @@ El primer avance no tenía navegador. Se consiguió Chromium posteriormente con 
 
 Dentro de `app/`: `npm ci`, `npx playwright install chromium`, `npm run test:e2e`. El script corre las suites secuencialmente y se detiene si una falla. No se necesitan credenciales para las pruebas locales; los éxitos REST controlados se identifican en su salida.
 
-GitHub Actions incluye build, lint, test:ble y E2E con capturas, y un job Android debug con Java 21. Actions fue iniciado en el remoto y está en cola: todavía no existe resultado CI ni APK descargable que se pueda afirmar como generado.
+GitHub Actions incluye build, lint, test:ble y E2E con capturas, y un job Android debug con Java 21. Android terminó correctamente en el run 37371974148 y publicó `studytime-android-debug`. Se descargó el ZIP, se verificó su SHA-256 y la integridad del APK. El job web fue cancelado y se solicitó reintento. Las cinco suites locales volvieron a pasar, además de build, lint y las cuatro pruebas BLE.
 
 ## Condiciones pendientes para una entrega académica completa
 
 Confirmar la modalidad de asistencia de IA según la política de la asignatura. Añadir matrículas y portada UAPA con datos reales. Se creó el borrador del informe Word con más de 25 páginas e índice automático en informe/Informe_Tecnico_StudyTime.docx. Falta completar los datos institucionales, incorporar pruebas físicas y realizar la defensa individual.
 
-Revisar el resultado de Actions, ya iniciado tras publicar la rama. Validar la API pública desde un entorno con acceso externo, mapa con teselas y sensores/permiso en un teléfono. Ejecutar escaneo BLE con un periférico anunciando, cámara física y GPS real. Estas pruebas no pueden sustituirse por capturas simuladas ni afirmar su éxito a partir de un build web.
+Revisar el reintento del job web de Actions. Validar la API pública desde un entorno con acceso externo, mapa con teselas y sensores/permiso en un teléfono. Ejecutar escaneo BLE con un periférico anunciando, cámara física y GPS real. Estas pruebas no pueden sustituirse por capturas simuladas ni afirmar su éxito a partir de un build web.
 
 ## Material de defensa
 

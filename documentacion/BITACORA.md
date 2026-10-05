@@ -112,3 +112,9 @@ Se preparó el informe Word con índice automático, Canvas, arquitectura, expli
 El usuario aceptó el PR #1. main contiene el merge 14616d7b401d148c4f70f1875cc031383a8d3311. Actions inició el run 37371974148 y los trabajos seguían en cola, sin pasos ni logs. No se reintentó una compilación que no había fallado ni se afirmó disponer de APK.
 
 Se prepararon una presentación editable de doce diapositivas, notas de apoyo, guía de defensa por integrante y casos Android pendientes. La presentación usa capturas existentes del navegador, identifica datos controlados y conserva la declaración de asistencia. No se inventaron resultados de teléfono. README refleja ahora main.
+
+## APK Android y nueva validación funcional
+
+El 5 de octubre se confirmó que el job Android 111971107843 del run 37371974148 terminó correctamente, compiló assembleDebug y publicó el artefacto 11370717990. Se descargó el ZIP y se verificó su SHA-256, la integridad de ambas estructuras ZIP y la presencia de AndroidManifest.xml/classes.dex. Las huellas están en evidencias/android-apk.json. No se instaló en hardware.
+
+El job web 111971107526 fue cancelado; se solicitó reintentar únicamente ese trabajo. Localmente volvieron a pasar build, lint, cuatro pruebas BLE y las cinco suites E2E, sin errores JavaScript no controlados. Los éxitos REST siguen interceptados, GPS emulado y cámara con PNG elegido. Se conservan las capturas previas porque la aplicación no cambió.

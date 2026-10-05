@@ -8,9 +8,9 @@ Código integrado y validado parcialmente en Chromium 153 y Node 24.19.0. `npm r
 
 La API pública no fue accesible desde el entorno de prueba: GET/POST exitosos se comprobaron con respuestas interceptadas; el fallo real mostró el mensaje previsto. GPS se validó con ubicación emulada. Cámara web se validó seleccionando un PNG de prueba. El escaneo BLE, GPS y cámara con hardware físico siguen pendientes. El mapa funciona en sus controles y marcadores; no se acredita la descarga de teselas externas.
 
-El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. El workflow propuesto prepara Java 21 y un APK debug; está en cola en GitHub.
+El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. GitHub Actions compiló correctamente con Java 21 y publicó el APK debug. El artefacto `studytime-android-debug` está disponible en la ejecución enlazada abajo; todavía no se instaló en un teléfono.
 
-**GitHub: el [PR #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) fue aceptado y la aplicación está en `main`.** La [ejecución de main](https://github.com/sftwrenginr/StudyTime_GrupoP/actions/runs/37371974148) inició los jobs web/Android, que seguían en cola al comprobarlos. Todavía no se acredita CI exitoso ni APK.
+**GitHub: el [PR #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) fue aceptado y la aplicación está en `main`.** La [ejecución de main](https://github.com/sftwrenginr/StudyTime_GrupoP/actions/runs/37371974148) completó correctamente el job Android y publicó el artefacto. El job web fue cancelado y se solicitó reintentar únicamente ese trabajo. La compilación, lint, cuatro pruebas BLE y cinco suites web pasaron nuevamente de forma local. El registro de integridad del APK está en [android-apk.json](documentacion/evidencias/android-apk.json).
 
 ## Equipo y distribución académica
 
@@ -109,7 +109,7 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 
 ## Automatización preparada para GitHub
 
-`.github/workflows/studytime.yml` define dos trabajos: build/lint y pruebas web con evidencias, y compilación Android debug. Los jobs tienen acceso de lectura al repositorio. El workflow no publica un sitio, no firma un APK de producción y fue iniciado en GitHub y sus resultados siguen pendientes.
+`.github/workflows/studytime.yml` define dos trabajos: build/lint y pruebas web con evidencias, y compilación Android debug. Los jobs tienen acceso de lectura al repositorio. El workflow no publica un sitio, no firma un APK de producción y generó el APK debug en GitHub. El resultado del reintento web sigue pendiente.
 
 ## Antecedentes
 

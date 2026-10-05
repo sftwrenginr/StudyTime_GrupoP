@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-05",
+  "application_commit": "14616d7b401d148c4f70f1875cc031383a8d3311",
+  "build": "passed",
+  "lint": "passed",
+  "ble_controlled_tests": 4,
+  "e2e_suites": {
+    "navegacion": "passed",
+    "api": "passed",
+    "plan": "passed",
+    "entorno": "passed",
+    "multimedia": "passed"
+  },
+  "unhandled_page_errors": [],
+  "limits": [
+    "REST success intercepted",
+    "GPS emulated",
+    "Camera selected PNG",
+    "No physical Android installation",
+    "No real BLE scan",
+    "External map tiles not verified"
+  ]
+}
