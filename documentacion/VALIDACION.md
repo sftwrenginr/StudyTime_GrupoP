@@ -49,4 +49,3 @@ Confirmar la modalidad de asistencia de IA según la política de la asignatura.
 Revisar el reintento del job web de Actions. Validar la API pública desde un entorno con acceso externo, mapa con teselas y sensores/permiso en un teléfono. Ejecutar escaneo BLE con un periférico anunciando, cámara física y GPS real. Estas pruebas no pueden sustituirse por capturas simuladas ni afirmar su éxito a partir de un build web.
 
 ## Material de defensa
-
