@@ -10,7 +10,7 @@ La API pública no fue accesible desde el entorno de prueba: GET/POST exitosos s
 
 El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. El workflow propuesto prepara Java 21 y un APK debug; está en cola en GitHub.
 
-**GitHub: avance publicado en [`studytime/desarrollo`](https://github.com/sftwrenginr/StudyTime_GrupoP/tree/studytime/desarrollo).** [Revisión #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) abierta como borrador. La conexión de escritura está habilitada; Actions fue iniciado y sus resultados siguen pendientes. `main` conserva la documentación original mientras se revisa el avance.
+**GitHub: el [PR #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) fue aceptado y la aplicación está en `main`.** La [ejecución de main](https://github.com/sftwrenginr/StudyTime_GrupoP/actions/runs/37371974148) inició los jobs web/Android, que seguían en cola al comprobarlos. Todavía no se acredita CI exitoso ni APK.
 
 ## Equipo y distribución académica
 
@@ -33,7 +33,7 @@ npm ci
 npx ionic serve
 ```
 
-Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requieren conexión para instalar dependencias. El avance se puede obtener con `git clone --branch studytime/desarrollo https://github.com/sftwrenginr/StudyTime_GrupoP.git`.
+Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requieren conexión para instalar dependencias. El avance se puede obtener con `git clone --branch main https://github.com/sftwrenginr/StudyTime_GrupoP.git`.
 
 ```bash
 npm run build
@@ -104,6 +104,8 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 ![Controles de audio](documentacion/capturas/m4/01-audio.png)
 
 ![Vista previa de archivo PNG de prueba, no captura física](documentacion/capturas/m4/02-imagen-prueba.png)
+
+[Presentación de defensa](documentacion/presentacion/Presentacion_StudyTime.pptx) · [Guía por integrante](documentacion/GUIA_DEFENSA.md) · [Pruebas pendientes en Android](documentacion/PRUEBAS_ANDROID.md). El informe Word conserva el estado previo a aceptar el PR #1.
 
 ## Automatización preparada para GitHub
 

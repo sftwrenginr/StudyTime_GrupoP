@@ -106,3 +106,9 @@ Se confirmó la instalación del conector en sftwrenginr y pasó la prueba de es
 Se corrigió una carrera asíncrona: initialize/requestLEScan podían finalizar después de salir de Entorno. Un número de búsqueda invalida resultados tardíos y un contador bloquea solicitudes solapadas durante la limpieza. Pasaron cuatro pruebas específicas con el plugin controlado, build, lint y la suite Entorno. Las evidencias no acreditan escaneo físico.
 
 Se preparó el informe Word con índice automático, Canvas, arquitectura, explicaciones, nueve capturas locales identificadas, resultados y 21 referencias. Se revisaron los renders y se corrigieron saltos, código justificado y filas partidas. La portada y las pruebas físicas siguen incompletas por falta de datos y dispositivos. La asistencia permanece declarada.
+
+## Aceptación del PR y preparación de defensa
+
+El usuario aceptó el PR #1. main contiene el merge 14616d7b401d148c4f70f1875cc031383a8d3311. Actions inició el run 37371974148 y los trabajos seguían en cola, sin pasos ni logs. No se reintentó una compilación que no había fallado ni se afirmó disponer de APK.
+
+Se prepararon una presentación editable de doce diapositivas, notas de apoyo, guía de defensa por integrante y casos Android pendientes. La presentación usa capturas existentes del navegador, identifica datos controlados y conserva la declaración de asistencia. No se inventaron resultados de teléfono. README refleja ahora main.
