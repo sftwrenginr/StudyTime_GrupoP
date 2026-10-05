@@ -96,3 +96,7 @@ GitHub figura instalado. El catálogo de herramientas de la sesión no expone op
 ## Nombre y comprobación de permisos GitHub
 
 La rama local se renombró a `studytime/desarrollo`. Las herramientas GitHub ya están disponibles y la cuenta autenticada es sftwrenginr, con permiso push sobre StudyTime_GrupoP. Sin embargo, la creación del primer blob devolvió HTTP 403, Resource not accessible by integration. La única instalación que informa el conector corresponde a cruzayala, no al propietario sftwrenginr. No se creó rama remota ni se publicó código. Se requiere instalar/configurar la integración en la cuenta propietaria y habilitar StudyTime_GrupoP.
+
+## Publicación en GitHub
+
+Se confirmó la instalación del conector en sftwrenginr y pasó la prueba de escritura. Se publicaron los archivos mediante la API Git de GitHub, verificando las huellas SHA de los blobs binarios. La rama studytime/desarrollo contiene el avance y se abrió el PR #1 como borrador: https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1 . El commit inicial remoto es f2f419ba2928217232036dcd5ef6bf030702c049. Actions inició el run 37367850362 y los jobs web/android están en cola. Todavía no hay resultado remoto ni APK. Se conserva el historial de etapas local en studytime/historial-local.

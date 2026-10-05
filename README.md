@@ -8,9 +8,9 @@ Código integrado y validado parcialmente en Chromium 153 y Node 24.19.0. `npm r
 
 La API pública no fue accesible desde el entorno de prueba: GET/POST exitosos se comprobaron con respuestas interceptadas; el fallo real mostró el mensaje previsto. GPS se validó con ubicación emulada. Cámara web se validó seleccionando un PNG de prueba. El escaneo BLE, GPS y cámara con hardware físico siguen pendientes. El mapa funciona en sus controles y marcadores; no se acredita la descarga de teselas externas.
 
-El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. El workflow propuesto prepara Java 21 y un APK debug; aún no se ejecutó en GitHub.
+El proyecto Android está creado y sincronizado. No se generó APK local: no hay SDK Android configurado y el Java disponible es 17. El workflow propuesto prepara Java 21 y un APK debug; está en cola en GitHub.
 
-**GitHub: cambios y commits locales preparados; no publicados.** GitHub está instalado, pero esta sesión no expone sus herramientas de repositorio. La comprobación de push por Git falló por ausencia de credenciales. El repositorio remoto original solo contiene documentación.
+**GitHub: avance publicado en [`studytime/desarrollo`](https://github.com/sftwrenginr/StudyTime_GrupoP/tree/studytime/desarrollo).** [Revisión #1](https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1) abierta como borrador. La conexión de escritura está habilitada; Actions fue iniciado y sus resultados siguen pendientes. `main` conserva la documentación original mientras se revisa el avance.
 
 ## Equipo y distribución académica
 
@@ -33,7 +33,7 @@ npm ci
 npx ionic serve
 ```
 
-Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requieren conexión para instalar dependencias. Una vez que este avance se publique, se podrá obtener con `git clone https://github.com/sftwrenginr/StudyTime_GrupoP.git`; clonar el remoto antes de publicarlo no descarga la app.
+Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requieren conexión para instalar dependencias. El avance se puede obtener con `git clone --branch studytime/desarrollo https://github.com/sftwrenginr/StudyTime_GrupoP.git`.
 
 ```bash
 npm run build
@@ -102,7 +102,7 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 
 ## Automatización preparada para GitHub
 
-`.github/workflows/studytime.yml` define dos trabajos: build/lint y pruebas web con evidencias, y compilación Android debug. Los jobs tienen acceso de lectura al repositorio. El workflow no publica un sitio, no firma un APK de producción y aún no ha corrido en GitHub. Su resultado debe revisarse después de obtener acceso de escritura.
+`.github/workflows/studytime.yml` define dos trabajos: build/lint y pruebas web con evidencias, y compilación Android debug. Los jobs tienen acceso de lectura al repositorio. El workflow no publica un sitio, no firma un APK de producción y fue iniciado en GitHub y sus resultados siguen pendientes.
 
 ## Antecedentes
 
