@@ -1,0 +1,8 @@
+
+# Entregables académicos elaborados fuera de GitHub
+documentacion/informe/
+documentacion/presentacion/
+documentacion/GUIA_DEFENSA.md
+documentacion/evidencias/informe.json
+*.pptx
+*.docx

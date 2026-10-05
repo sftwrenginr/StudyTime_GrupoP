@@ -118,3 +118,7 @@ Se prepararon una presentación editable de doce diapositivas, notas de apoyo, g
 El 5 de octubre se confirmó que el job Android 111971107843 del run 37371974148 terminó correctamente, compiló assembleDebug y publicó el artefacto 11370717990. Se descargó el ZIP y se verificó su SHA-256, la integridad de ambas estructuras ZIP y la presencia de AndroidManifest.xml/classes.dex. Las huellas están en evidencias/android-apk.json. No se instaló en hardware.
 
 El job web 111971107526 fue cancelado; se solicitó reintentar únicamente ese trabajo. Localmente volvieron a pasar build, lint, cuatro pruebas BLE y las cinco suites E2E, sin errores JavaScript no controlados. Los éxitos REST siguen interceptados, GPS emulado y cámara con PNG elegido. Se conservan las capturas previas porque la aplicación no cambió.
+
+## Alcance actualizado del repositorio
+
+El 5 de octubre, a petición del usuario, se retiraron de la versión actual el informe Word, la presentación y el guion de defensa; se conservan aparte. Se retiraron enlaces y se añadieron exclusiones de Git. No se modificó el código de la aplicación ni se reescribió el historial de commits.
