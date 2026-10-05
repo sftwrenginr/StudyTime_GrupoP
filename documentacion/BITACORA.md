@@ -106,3 +106,7 @@ Se confirmó la instalación del conector en sftwrenginr y pasó la prueba de es
 Se corrigió una carrera asíncrona: initialize/requestLEScan podían finalizar después de salir de Entorno. Un número de búsqueda invalida resultados tardíos y un contador bloquea solicitudes solapadas durante la limpieza. Pasaron cuatro pruebas específicas con el plugin controlado, build, lint y la suite Entorno. Las evidencias no acreditan escaneo físico.
 
 Se preparó el informe Word con índice automático, Canvas, arquitectura, explicaciones, nueve capturas locales identificadas, resultados y 21 referencias. Se revisaron los renders y se corrigieron saltos, código justificado y filas partidas. La portada y las pruebas físicas siguen incompletas por falta de datos y dispositivos. La asistencia permanece declarada.
+
+## Alcance actualizado del repositorio
+
+El 5 de octubre, a petición del usuario, se retiraron de la versión actual el informe Word, la presentación y el guion de defensa; se conservan aparte. Se retiraron enlaces y se añadieron exclusiones de Git. No se modificó el código de la aplicación ni se reescribió el historial de commits.
