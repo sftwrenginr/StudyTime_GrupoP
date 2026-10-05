@@ -79,7 +79,6 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 
 [Plan y reparto](documentacion/PLAN_TRABAJO.md) · [Desarrollo explicado](documentacion/DESARROLLO_MODULOS.md) · [Arquitectura, Canvas y diseño](documentacion/ARQUITECTURA_Y_DISENO.md) · [Bitácora](documentacion/BITACORA.md) · [Validación y pendientes](documentacion/VALIDACION.md) · [Referencias](documentacion/REFERENCIAS.md).
 
-[Informe técnico en Word](documentacion/informe/Informe_Tecnico_StudyTime.docx): borrador paginado con índice, arquitectura, explicación por módulo, capturas, pruebas y referencias. Faltan matrículas, portada institucional completa y validación física; el documento identifica estos límites.
 
 ### Módulo 1
 
@@ -112,3 +111,7 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 ## Antecedentes
 
 Se conservan `detector_red/`, `modo_offline/` y la documentación original de Unidad IV. La implementación actual está en `app/`, no en esas carpetas históricas. Los documentos `AVANCE_01.md` y `MODULO_1_PASO_1.md` describen etapas anteriores; para estado actual consulta este README y VALIDACION.
+
+## Alcance del repositorio
+
+Este repositorio contiene la aplicación, las instrucciones técnicas y las evidencias de validación. El informe académico, la presentación y los guiones de exposición se trabajan aparte y no se incorporarán a GitHub.
