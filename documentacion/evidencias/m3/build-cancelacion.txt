@@ -1,0 +1,54 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> studytime-grupo-p@0.0.1 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names                  |  Raw size | Estimated transfer size
+main-JGHLWW7J.js    | main                   | 579.02 kB |               141.82 kB
+styles-ZDYBCHG4.css | styles                 |  57.69 kB |                 7.70 kB
+chunk-CFQqZsCd.js   | -                      |  53.23 kB |                16.43 kB
+chunk-BuX5MI4i.js   | -                      |   3.78 kB |                 1.51 kB
+chunk-DKqF8VjK.js   | -                      |   2.56 kB |               725 bytes
+chunk-CqXuH1zS.js   | -                      |   2.24 kB |                 1.04 kB
+chunk-CCT0nc8p.js   | -                      |   1.94 kB |               764 bytes
+chunk-DjfCS1Rm.js   | -                      |   1.33 kB |               579 bytes
+chunk-C0bGW85Y.js   | -                      | 223 bytes |               223 bytes
+chunk-C3vFjYKF.js   | -                      | 190 bytes |               190 bytes
+
+                    | Initial total          | 702.20 kB |               170.98 kB
+
+Lazy chunk files    | Names                  |  Raw size | Estimated transfer size
+chunk-CJHNuVL_.js   | entorno-module         | 164.03 kB |                41.81 kB
+chunk-WPrCILPd.js   | plan-module            |  62.45 kB |                12.15 kB
+chunk-adyYK7cx2.js  | ion-datetime-entry     |  57.79 kB |                11.67 kB
+chunk-C7yDp7-b.js   | ion-item_8-entry       |  57.31 kB |                 7.82 kB
+chunk-BoZGFR492.js  | ion-select_3-entry     |  55.05 kB |                 9.56 kB
+chunk-weLzELSn2.js  | ion-textarea-entry     |  46.64 kB |                 5.84 kB
+chunk-OKKYt9z3.js   | ion-alert-entry        |  44.64 kB |                 7.18 kB
+chunk-plK8IqIa2.js  | ion-modal-entry        |  43.83 kB |                10.48 kB
+chunk-lCiCS25F2.js  | ion-input-entry        |  43.39 kB |                 6.36 kB
+chunk-w32aP2PP2.js  | ion-app_8-entry        |  43.05 kB |                 9.64 kB
+chunk-DYi9z6Fg2.js  | ion-action-sheet-entry |  31.74 kB |                 5.42 kB
+chunk-Ca0p1CJ7.js   | ion-range-entry        |  30.91 kB |                 6.04 kB
+chunk-D2qibjJI.js   | ion-segment_2-entry    |  29.29 kB |                 5.51 kB
+chunk-VOCBIeiQ.js   | ion-button_2-entry     |  28.24 kB |                 5.62 kB
+chunk-Dr1wxO-g.js   | ion-popover-entry      |  25.80 kB |                 6.46 kB
+...and 94 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [4.402 seconds] - 2026-10-05T20:16:07.640Z
+
+▲ [WARNING] Module 'leaflet' used by 'src/app/pages/entorno/entorno.page.ts' is not ESM
+
+  CommonJS or AMD dependencies can cause optimization bailouts.
+  For more information see: https://angular.dev/tools/cli/build#configuring-commonjs-dependencies
+
+
+▲ [WARNING] Module 'localforage' used by 'node_modules/@ionic/storage/dist/esm/index.js' is not ESM
+
+  CommonJS or AMD dependencies can cause optimization bailouts.
+  For more information see: https://angular.dev/tools/cli/build#configuring-commonjs-dependencies
+
+
+Output location: /workspace/scratch/1d8db17a3d27/StudyTime_GrupoP/app/www

@@ -57,3 +57,9 @@ El componente multimedia se declara dentro del módulo Recursos y conserva separ
 Camera usa `takePhoto()` de la versión instalada, que evita la API anterior `getPhoto()` marcada como obsoleta. En web `webUseInput: true` permite usar la selección/captura que ofrece el navegador. En Android se solicita una fotografía al plugin. La vista previa utiliza `webPath`, o la conversión de URI nativa. No se promete guardar la foto en IndexedDB ni galería: la vista previa se pierde al recargar. El botón se desbloquea también en caso de cancelación/error.
 
 Las pruebas comprobaron reproducción real del WAV, pausa, detener, avance con teclado, pausa al salir, uso offline en app abierta y selección/vista previa/eliminación de un PNG. La prueba inicial de progreso utilizó End, que el control no aplicó en este entorno; se verificó ArrowRight, operación realmente admitida. **El PNG elegido por automatización no prueba una captura con cámara física.** Evidencias: `evidencias/m4/pruebas.json` y capturas M4.
+
+## Corrección posterior del módulo 3
+
+Se detectó que initialize o requestLEScan podían terminar tras salir de Entorno. BleService ahora usa un identificador por búsqueda que detener invalida. Los callbacks antiguos se descartan y un inicio de escaneo que termina después de cancelar se limpia con stopLEScan. operacionesPendientes evita empezar otra búsqueda mientras finaliza la anterior. Esto previene un escaneo fuera de la página y la cancelación accidental de una búsqueda nueva.
+
+qa-ble.cjs transpila el servicio real y sustituye solo el plugin por operaciones controladas. Sus cuatro casos pasaron: salida durante initialize, cancelación durante requestLEScan, búsqueda posterior con deduplicación y error de permisos. No equivale a escaneo físico. Build, lint y la suite Entorno volvieron a pasar. Los registros están en evidencias/m3/ble-cancelacion.json, build-cancelacion.txt y lint-cancelacion.txt. Actions ejecutará también npm run test:ble.

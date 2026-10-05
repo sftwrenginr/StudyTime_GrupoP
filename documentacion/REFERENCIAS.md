@@ -1,6 +1,6 @@
 # Fuentes técnicas para el informe
 
-Referencias a documentación oficial o del proyecto mantenedor, consultadas el 5 de octubre de 2026. Las páginas sin fecha se registran como s. f.; no se les asigna 2026 por haberlas consultado ese año. Antes del informe académico final faltan al menos tres referencias con fecha de publicación verificable entre 2021 y 2026, según la consigna.
+Referencias a documentación oficial o del proyecto mantenedor, consultadas el 5 de octubre de 2026. Las páginas sin fecha se registran como s. f.; no se les asigna 2026 por haberlas consultado ese año. Se añadieron tres notas de versión con fechas verificadas en la API de publicaciones de GitHub, dentro del período 2021–2026.
 
 Angular. (s. f.). *Angular navigation and routing*. https://angular.dev/guide/routing
 
@@ -39,3 +39,9 @@ GitHub Actions. (s. f.). *setup-node* [Repositorio de software]. https://github.
 GitHub Actions. (s. f.). *setup-java* [Repositorio de software]. https://github.com/actions/setup-java
 
 Las fuentes adicionales de las guías anteriores forman parte del material consultado. Esta lista no acredita que los estudiantes hayan leído esas fuentes ni realizado las pruebas descritas por el asistente.
+
+Ionic Team. (2026, 30 de septiembre). *Ionic Framework v9.0.6* [Notas de versión de software]. GitHub. https://github.com/ionic-team/ionic-framework/releases/tag/v9.0.6
+
+Ionic Team. (2026, 11 de septiembre). *Capacitor 8.5.2* [Notas de versión de software]. GitHub. https://github.com/ionic-team/capacitor/releases/tag/8.5.2
+
+Leaflet. (2023, 18 de mayo). *Leaflet v1.9.4* [Notas de versión de software]. GitHub. https://github.com/Leaflet/Leaflet/releases/tag/v1.9.4

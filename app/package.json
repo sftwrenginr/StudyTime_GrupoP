@@ -10,7 +10,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "test:e2e": "node scripts/run-qa.cjs"
+    "test:e2e": "node scripts/run-qa.cjs",
+    "test:ble": "node scripts/qa-ble.cjs"
   },
   "private": true,
   "dependencies": {

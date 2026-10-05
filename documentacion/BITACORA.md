@@ -100,3 +100,9 @@ La rama local se renombró a `studytime/desarrollo`. Las herramientas GitHub ya 
 ## Publicación en GitHub
 
 Se confirmó la instalación del conector en sftwrenginr y pasó la prueba de escritura. Se publicaron los archivos mediante la API Git de GitHub, verificando las huellas SHA de los blobs binarios. La rama studytime/desarrollo contiene el avance y se abrió el PR #1 como borrador: https://github.com/sftwrenginr/StudyTime_GrupoP/pull/1 . El commit inicial remoto es f2f419ba2928217232036dcd5ef6bf030702c049. Actions inició el run 37367850362 y los jobs web/android están en cola. Todavía no hay resultado remoto ni APK. Se conserva el historial de etapas local en studytime/historial-local.
+
+## Revisión de cancelación BLE e informe técnico
+
+Se corrigió una carrera asíncrona: initialize/requestLEScan podían finalizar después de salir de Entorno. Un número de búsqueda invalida resultados tardíos y un contador bloquea solicitudes solapadas durante la limpieza. Pasaron cuatro pruebas específicas con el plugin controlado, build, lint y la suite Entorno. Las evidencias no acreditan escaneo físico.
+
+Se preparó el informe Word con índice automático, Canvas, arquitectura, explicaciones, nueve capturas locales identificadas, resultados y 21 referencias. Se revisaron los renders y se corrigieron saltos, código justificado y filas partidas. La portada y las pruebas físicas siguen incompletas por falta de datos y dispositivos. La asistencia permanece declarada.

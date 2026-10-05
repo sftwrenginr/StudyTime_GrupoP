@@ -1,0 +1,22 @@
+{
+  "kind": "plugin controlado sin hardware",
+  "results": [
+    {
+      "test": "Salir durante initialize no inicia escaneo ni permite otra operación solapada",
+      "result": "passed"
+    },
+    {
+      "test": "Cancelar requestLEScan ignora callbacks tardíos y vuelve a detener el escaneo",
+      "result": "passed"
+    },
+    {
+      "test": "Una búsqueda posterior funciona y deduplica dispositivos controlados",
+      "result": "passed"
+    },
+    {
+      "test": "Error de inicialización libera controles y muestra el mensaje",
+      "result": "passed"
+    }
+  ],
+  "realBLEScan": "pendiente"
+}

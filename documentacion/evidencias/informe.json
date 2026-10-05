@@ -1,0 +1,29 @@
+{
+  "fecha": "2026-10-05",
+  "paginas": 31,
+  "revision": "Render y revisión visual de todas las páginas; índice contrastado con encabezados; código y tablas corregidos",
+  "secciones": {
+    "Introducción y objetivos": 3,
+    "Alcance y cobertura de unidades": 4,
+    "Modelo Canvas": 5,
+    "Arquitectura y datos": 6,
+    "Diseño de interfaces": 8,
+    "Módulo 1 asignado a Luis Solano": 9,
+    "Módulo 2 asignado a Joseph Reina": 13,
+    "Módulo 3 asignado a Alexander Tejeda": 16,
+    "Módulo 4 asignado a Alex Santana": 20,
+    "Pruebas y resultados": 23,
+    "Problemas y decisiones técnicas": 26,
+    "Instalación y manual de uso": 27,
+    "Android y publicación": 28,
+    "Conclusiones y trabajo futuro": 29,
+    "Referencias": 30,
+    "Anexo de revisión individual": 31
+  },
+  "capturas": 9,
+  "limites": [
+    "Matrículas y portada institucional completa pendientes",
+    "Pruebas físicas y APK pendientes",
+    "Asistencia declarada"
+  ]
+}

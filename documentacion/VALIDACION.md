@@ -23,14 +23,14 @@ Fecha: 5 de octubre de 2026. Entorno: Node 24.19.0, npm 11.9.0 y Chromium 153.0.
 | Android | `cap add` y `cap sync` pasaron | Falta SDK/JDK adecuado para APK local; no prueba nativa |
 | GitHub | Rama publicada y PR #1 abierto; Actions iniciado | Jobs web y Android en cola; no resultado CI ni APK acreditado |
 
-Las cinco suites volvieron a pasar en conjunto después de integrar todos los módulos. Los resultados JSON y capturas se generan desde `app/scripts/`. Los registros distinguen los datos controlados de los físicos y remotos.
+Las cinco suites volvieron a pasar en conjunto después de integrar todos los módulos. Tras corregir la cancelación BLE, pasaron cuatro pruebas específicas con el plugin controlado, build, lint y la suite Entorno. Los resultados JSON y capturas se generan desde `app/scripts/`. Los registros distinguen los datos controlados de los físicos y remotos.
 
 ## Evidencias
 
 - `evidencias/build-final.txt`, `lint.txt` y `dependencias.txt`.
 - M1: `evidencias/m1/navegacion.json`, `api.json`; capturas Inicio, GET y POST controlados.
 - M2: `evidencias/m2/pruebas.json`; capturas Plan y eliminación.
-- M3: `evidencias/m3/pruebas.json`; capturas Offline y mapa con GPS emulado.
+- M3: `evidencias/m3/pruebas.json`, `ble-cancelacion.json`, `build-cancelacion.txt` y `lint-cancelacion.txt`; capturas Offline y mapa con GPS emulado.
 - M4: `evidencias/m4/pruebas.json`; capturas reproductor y PNG de prueba.
 - Android: `evidencias/android-sync.txt`.
 
@@ -44,6 +44,6 @@ GitHub Actions incluye build, lint y E2E con capturas, y un job Android debug co
 
 ## Condiciones pendientes para una entrega académica completa
 
-Confirmar la modalidad de asistencia de IA según la política de la asignatura. Añadir matrículas y portada UAPA con datos reales. Completar el informe paginado de 25 o más páginas, índice automático y defensa individual; esta documentación Markdown es una base técnica, no ese informe final.
+Confirmar la modalidad de asistencia de IA según la política de la asignatura. Añadir matrículas y portada UAPA con datos reales. Se creó el borrador del informe Word con más de 25 páginas e índice automático en informe/Informe_Tecnico_StudyTime.docx. Falta completar los datos institucionales, incorporar pruebas físicas y realizar la defensa individual.
 
 Revisar el resultado de Actions, ya iniciado tras publicar la rama. Validar la API pública desde un entorno con acceso externo, mapa con teselas y sensores/permiso en un teléfono. Ejecutar escaneo BLE con un periférico anunciando, cámara física y GPS real. Estas pruebas no pueden sustituirse por capturas simuladas ni afirmar su éxito a partir de un build web.

@@ -38,11 +38,14 @@ Alternativa: `npm start`. El entorno probado usa Node 24.19.0. Los comandos requ
 ```bash
 npm run build
 npm run lint
+npm run test:ble
 npx playwright install chromium
 npm run test:e2e
 ```
 
 Las pruebas generan capturas y registros bajo `documentacion/`. Las respuestas REST controladas, GPS emulado e imagen de prueba se identifican en esos registros. El temporizador mantiene su estado entre pantallas pero no tras recargar. CRUD y audio funcionan sin red en una aplicación ya cargada; no se ha creado una PWA capaz de arrancar desde cero offline.
+
+La cancelación BLE descarta respuestas tardías al salir de Entorno. Pasaron cuatro pruebas específicas con el plugin controlado, además de build, lint y la suite Entorno.
 
 ## Tecnologías instaladas
 
@@ -75,6 +78,8 @@ La CLI agregó también App, Haptics, Keyboard y Status Bar; su presencia no se 
 ## Documentación y evidencias
 
 [Plan y reparto](documentacion/PLAN_TRABAJO.md) · [Desarrollo explicado](documentacion/DESARROLLO_MODULOS.md) · [Arquitectura, Canvas y diseño](documentacion/ARQUITECTURA_Y_DISENO.md) · [Bitácora](documentacion/BITACORA.md) · [Validación y pendientes](documentacion/VALIDACION.md) · [Referencias](documentacion/REFERENCIAS.md).
+
+[Informe técnico en Word](documentacion/informe/Informe_Tecnico_StudyTime.docx): borrador paginado con índice, arquitectura, explicación por módulo, capturas, pruebas y referencias. Faltan matrículas, portada institucional completa y validación física; el documento identifica estos límites.
 
 ### Módulo 1
 
