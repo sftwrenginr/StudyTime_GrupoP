@@ -1,0 +1,27 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+app@0.0.1 /workspace/scratch/1d8db17a3d27/StudyTime_GrupoP/app
+├─┬ @angular/build@22.1.8
+│ └── @angular/core@22.1.7 deduped
+├─┬ @angular/common@22.1.7
+│ └── @angular/core@22.1.7 deduped
+├── @angular/core@22.1.7
+├─┬ @angular/forms@22.1.7
+│ └── @angular/core@22.1.7 deduped
+├─┬ @angular/platform-browser-dynamic@22.1.7
+│ └── @angular/core@22.1.7 deduped
+├─┬ @angular/platform-browser@22.1.7
+│ └── @angular/core@22.1.7 deduped
+├─┬ @angular/router@22.1.7
+│ └── @angular/core@22.1.7 deduped
+├─┬ @capacitor/app@8.1.2
+│ └── @capacitor/core@8.5.2 deduped
+├── @capacitor/cli@8.5.2
+├── @capacitor/core@8.5.2
+├─┬ @capacitor/haptics@8.0.2
+│ └── @capacitor/core@8.5.2 deduped
+├─┬ @capacitor/keyboard@8.0.6
+│ └── @capacitor/core@8.5.2 deduped
+├─┬ @capacitor/status-bar@8.0.4
+│ └── @capacitor/core@8.5.2 deduped
+└─┬ @ionic/angular@9.0.6
+  └── @angular/core@22.1.7 deduped

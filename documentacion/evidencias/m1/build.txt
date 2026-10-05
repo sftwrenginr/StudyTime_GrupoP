@@ -1,0 +1,41 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> app@0.0.1 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names                  |  Raw size | Estimated transfer size
+main-ZC4WTRAT.js    | main                   | 421.98 kB |                99.95 kB
+chunk-BpgDPgvT.js   | -                      |  53.23 kB |                16.41 kB
+styles-JKZMTOLL.css | styles                 |  46.60 kB |                 5.49 kB
+chunk-Du8lq-qc.js   | -                      |   3.78 kB |                 1.51 kB
+chunk-DKqF8VjK.js   | -                      |   2.56 kB |               725 bytes
+chunk-BSBPvpEm.js   | -                      |   2.22 kB |                 1.03 kB
+chunk-DOdOAOoQ.js   | -                      |   1.33 kB |               577 bytes
+chunk-DEQTwfN6.js   | -                      | 731 bytes |               731 bytes
+chunk-C3vFjYKF.js   | -                      | 190 bytes |               190 bytes
+
+                    | Initial total          | 532.62 kB |               126.62 kB
+
+Lazy chunk files    | Names                  |  Raw size | Estimated transfer size
+chunk-BQXlvIhN.js   | ion-datetime-entry     |  57.83 kB |                11.65 kB
+chunk-Cb_BQJsX.js   | ion-item_8-entry       |  57.32 kB |                 7.82 kB
+chunk-CHUrKbGz2.js  | ion-select_3-entry     |  55.05 kB |                 9.50 kB
+chunk-QEOJzCxh.js   | ion-textarea-entry     |  46.64 kB |                 5.84 kB
+chunk-B8GeMBfN.js   | ion-alert-entry        |  44.61 kB |                 7.22 kB
+chunk-CNoasgva.js   | ion-modal-entry        |  43.82 kB |                10.42 kB
+chunk-CZ4VLllR2.js  | ion-input-entry        |  43.40 kB |                 6.37 kB
+chunk-C0ITUbTr2.js  | ion-app_8-entry        |  43.09 kB |                 9.66 kB
+chunk-DlhtqdRG.js   | ion-action-sheet-entry |  31.73 kB |                 5.40 kB
+chunk-6BQf9fwl.js   | ion-range-entry        |  30.88 kB |                 6.01 kB
+chunk-CEClyFD9.js   | ion-segment_2-entry    |  29.30 kB |                 5.51 kB
+chunk-aD9_E0-d.js   | ion-button_2-entry     |  28.25 kB |                 5.61 kB
+chunk-BIknx7Mm.js   | ion-popover-entry      |  25.82 kB |                 6.46 kB
+chunk-CArBxKHF.js   | ion-refresher_2-entry  |  25.58 kB |                 5.43 kB
+chunk-CSE6c0NK2.js  | ion-searchbar-entry    |  25.32 kB |                 4.71 kB
+...and 73 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [2.618 seconds] - 2026-10-05T19:09:45.591Z
+
+Output location: /workspace/scratch/1d8db17a3d27/StudyTime_GrupoP/app/www

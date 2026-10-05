@@ -1,0 +1,26 @@
+{
+  "browser": "153.0.8010.0",
+  "results": [
+    {
+      "tab": "Plan",
+      "url": "http://127.0.0.1:8120/tabs/plan",
+      "result": "passed"
+    },
+    {
+      "tab": "Entorno",
+      "url": "http://127.0.0.1:8120/tabs/entorno",
+      "result": "passed"
+    },
+    {
+      "tab": "Recursos",
+      "url": "http://127.0.0.1:8120/tabs/recursos",
+      "result": "passed"
+    },
+    {
+      "tab": "Inicio",
+      "url": "http://127.0.0.1:8120/tabs/inicio",
+      "result": "passed"
+    }
+  ],
+  "pageErrors": []
+}

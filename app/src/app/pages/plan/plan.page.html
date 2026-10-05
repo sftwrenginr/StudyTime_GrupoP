@@ -1,0 +1,32 @@
+<ion-header><ion-toolbar><ion-title>Plan de estudio</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="cargar($event)"><ion-refresher-content></ion-refresher-content></ion-refresher>
+  <ion-card><ion-card-header><ion-card-title>{{ editando ? 'Editar sesión' : 'Nueva sesión' }}</ion-card-title></ion-card-header><ion-card-content>
+    <ion-input label="Título" labelPlacement="stacked" [(ngModel)]="titulo" maxlength="100"></ion-input>
+    <ion-input label="Duración (minutos)" labelPlacement="stacked" type="number" min="1" max="240" [(ngModel)]="minutos"></ion-input>
+    <ion-select label="Actividad" [(ngModel)]="tipo"><ion-select-option value="Estudio">Estudio</ion-select-option><ion-select-option value="Lectura">Lectura</ion-select-option><ion-select-option value="Examen">Examen</ion-select-option><ion-select-option value="Ocio">Ocio</ion-select-option></ion-select>
+    <ion-button (click)="guardar()" [disabled]="ocupado()">{{ editando ? 'Guardar cambios' : 'Agregar sesión' }}</ion-button>
+    @if (editando) { <ion-button fill="outline" (click)="cancelar()">Cancelar edición</ion-button> }
+  </ion-card-content></ion-card>
+  @if (error()) { <p role="alert">{{ error() }}</p> }
+  <ion-card><ion-card-header><ion-card-title>Temporizador</ion-card-title></ion-card-header><ion-card-content>
+    <p>{{ timer.titulo() }}</p><h2 data-testid="tiempo">{{ timer.texto() }}</h2>
+    <p>{{ timer.activo() ? 'En curso' : 'Detenido' }}</p>
+    <ion-button (click)="timer.pausar()" [disabled]="!timer.activo()">Pausar</ion-button>
+    <ion-button (click)="timer.reanudar()" [disabled]="timer.activo() || timer.segundos() === 0">Continuar</ion-button>
+    <ion-button fill="outline" (click)="timer.reiniciar()" [disabled]="timer.titulo() === 'Selecciona una sesión'">Reiniciar</ion-button>
+    <p>El temporizador se mantiene al cambiar de pantalla. Se reinicia al recargar la aplicación.</p>
+  </ion-card-content></ion-card>
+  <h2>Mis sesiones</h2><p>Desliza una sesión hacia la izquierda para ver las acciones. Arrastra hacia abajo para recargar.</p>
+  @if (!sesiones().length) { <p>Aún no tienes sesiones. Agrega la primera.</p> }
+  <ion-list>
+    @for (sesion of sesiones(); track sesion.id) {
+      <ion-item-sliding><ion-item>
+        <ion-checkbox slot="start" [checked]="sesion.completada" (ionChange)="completar(sesion)" [disabled]="ocupado()" [attr.aria-label]="'Completar ' + sesion.titulo"></ion-checkbox>
+        <ion-label><h3>{{ sesion.titulo }}</h3><p>{{ sesion.tipo }} · {{ sesion.minutos }} min · {{ sesion.completada ? 'Completada' : 'Pendiente' }}</p></ion-label>
+        <ion-button slot="end" (click)="timer.iniciar(sesion)">Iniciar</ion-button>
+        <ion-button slot="end" fill="outline" (click)="editar(sesion)" [disabled]="ocupado()">Editar</ion-button>
+      </ion-item><ion-item-options side="end"><ion-item-option color="danger" (click)="eliminar(sesion)" [disabled]="ocupado()">Eliminar</ion-item-option></ion-item-options></ion-item-sliding>
+    }
+  </ion-list>
+</ion-content>

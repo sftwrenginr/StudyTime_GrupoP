@@ -1,0 +1,8 @@
+<ion-header><ion-toolbar><ion-title>StudyTime</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+<ion-badge [color]="red.conectado() ? 'success' : 'danger'">{{ red.conectado() === null ? 'Estado de red desconocido' : red.conectado() ? 'Online' : 'Offline' }}</ion-badge>
+  <ion-card><ion-card-header><ion-card-subtitle>Tu tiempo, con propósito</ion-card-subtitle><ion-card-title>Organiza tu tiempo</ion-card-title></ion-card-header>
+    <ion-card-content><p>Prepara sesiones de estudio, lectura, exámenes y ocio.</p><ion-button routerLink="/tabs/plan" expand="block">Planificar una sesión</ion-button></ion-card-content>
+  </ion-card>
+  <ion-list><ion-item routerLink="/tabs/entorno" detail="true">Explorar mi entorno</ion-item><ion-item routerLink="/tabs/recursos" detail="true">Consultar recursos</ion-item></ion-list>
+</ion-content>

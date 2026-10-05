@@ -1,0 +1,18 @@
+<ion-header><ion-toolbar><ion-title>Entorno de estudio</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <ion-badge [color]="red.conectado() === true ? 'success' : red.conectado() === false ? 'danger' : 'medium'" role="status">{{ red.conectado() === true ? 'Online' : red.conectado() === false ? 'Offline' : 'Estado de red desconocido' }}</ion-badge>
+  <p>El estado de red no garantiza acceso a todos los servicios de internet.</p>
+  <h2>Mi lugar de estudio</h2>
+  <ion-button (click)="localizar()" [disabled]="buscando()">{{ buscando() ? 'Buscando…' : 'Mi ubicación' }}</ion-button>
+  <ion-button fill="outline" (click)="limpiar()">Limpiar lugares</ion-button>
+  <p>{{ ubicacion() }}</p>@if (error()) { <p role="alert">{{ error() }}</p> }
+  <div id="study-map" style="height:320px;width:100%;border-radius:12px" aria-label="Mapa interactivo"></div>
+  <p>Toca el mapa para marcar un lugar de estudio. Los lugares se conservan durante esta visita. Las imágenes del mapa requieren internet.</p>
+  <ion-card><ion-card-header><ion-card-title>Dispositivos BLE cercanos</ion-card-title></ion-card-header><ion-card-content>
+    <p>Busca periféricos BLE. Esta función no conecta auriculares de audio Bluetooth clásico ni comparte archivos.</p>
+    <ion-button (click)="ble.buscar()" [disabled]="ble.escaneando()">Buscar dispositivos</ion-button>
+    @if (ble.escaneando()) { <ion-button fill="outline" (click)="ble.detener()">Detener escaneo</ion-button> }
+    <p role="status">{{ ble.mensaje() }}</p>
+    <ion-list>@for (device of ble.dispositivos(); track device.deviceId) { <ion-item><ion-label>{{ device.name || 'Dispositivo sin nombre' }}<p>{{ device.deviceId }}</p></ion-label></ion-item> }</ion-list>
+  </ion-card-content></ion-card>
+</ion-content>

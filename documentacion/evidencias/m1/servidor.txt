@@ -1,0 +1,22 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> app@0.0.1 start
+> ng serve --host 127.0.0.1 --port 8101
+
+❯ Building...
+✔ Building...
+Initial chunk files     | Names         | Raw size
+styles.css              | styles        | 57.70 kB |
+main.js                 | main          |  6.99 kB |
+
+                        | Initial total | 64.69 kB
+
+Lazy chunk files        | Names         | Raw size
+home.module-WE3VDXOX.js | home-module   |  9.39 kB |
+
+Application bundle generation complete. [1.186 seconds] - 2026-10-05T19:11:21.489Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+3:11:21 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+  ➜  Local:   http://127.0.0.1:8101/

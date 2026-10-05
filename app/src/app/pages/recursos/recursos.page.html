@@ -1,0 +1,19 @@
+<ion-header><ion-toolbar><ion-title>Recursos de estudio</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <app-multimedia></app-multimedia>
+  <h2>Recursos de demostración</h2><p>La API de práctica devuelve publicaciones de ejemplo.</p>
+  @if (cargando()) { <ion-spinner aria-label="Cargando recursos"></ion-spinner> }
+  @if (error()) { <p role="alert">{{ error() }}</p> }
+  <ion-button (click)="cargar()" [disabled]="cargando()">Actualizar recursos</ion-button>
+  @for (recurso of recursos(); track recurso.id) {
+    <ion-card><ion-card-header><ion-card-title>{{ recurso.title }}</ion-card-title></ion-card-header><ion-card-content>
+      <p>{{ recurso.body | slice:0:90 }}…</p><ion-button [routerLink]="['/tabs/recursos', recurso.id]">Ver recurso</ion-button>
+    </ion-card-content></ion-card>
+  }
+  <ion-card><ion-card-header><ion-card-title>Enviar una sesión de prueba</ion-card-title></ion-card-header><ion-card-content>
+    <ion-input label="Título de la sesión" labelPlacement="stacked" [(ngModel)]="titulo" maxlength="100"></ion-input>
+    <ion-textarea label="Descripción de la sesión" labelPlacement="stacked" [(ngModel)]="descripcion" maxlength="500"></ion-textarea>
+    <ion-button (click)="enviar()" [disabled]="enviando()">{{ enviando() ? 'Enviando…' : 'Enviar prueba' }}</ion-button>
+    <p role="status">{{ respuesta() }}</p>
+  </ion-card-content></ion-card>
+</ion-content>

@@ -1,0 +1,65 @@
+// Pruebas automatizadas con asistencia de IA. Los datos controlados se identifican en cada resultado.
+const { chromium: playwright } = require('playwright');
+const { spawn } = require('child_process');
+const fs = require('fs');
+(async()=>{
+ const repo=require('path').resolve(__dirname,'../..');
+ const server=spawn('npm',['start','--','--host','127.0.0.1','--port','8122'],{cwd:repo+'/app',stdio:'ignore'});
+ let browser;
+ try {
+  for(let i=0;i<40;i++){try{await fetch('http://127.0.0.1:8122');break;}catch{await new Promise(r=>setTimeout(r,500));}}
+  browser=await playwright.launch({executablePath:process.env.STUDYTIME_CHROMIUM_PATH || undefined,args:['--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-zygote'],headless:true});
+  const page=await browser.newPage({viewport:{width:390,height:844}}); const errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('http://127.0.0.1:8122');
+  await page.getByText('Organiza tu tiempo',{exact:true}).waitFor();
+  const results=[];
+  await page.locator('ion-tab-button').filter({hasText:'Plan'}).click();
+  await page.locator('ion-input input').nth(0).fill('Repasar Angular'); await page.locator('ion-input input').nth(1).fill('1');
+  await page.getByText('Agregar sesión',{exact:true}).click();
+  await page.locator('ion-item-sliding').getByText('Repasar Angular',{exact:true}).waitFor();
+  results.push({test:'Crear sesión',result:'passed'});
+  await page.locator('ion-item-sliding').getByText('Editar',{exact:true}).click();
+  await page.locator('ion-input input').nth(0).fill('Repasar rutas'); await page.getByText('Guardar cambios',{exact:true}).click();
+  await page.locator('ion-item-sliding').getByText('Repasar rutas',{exact:true}).waitFor();
+  await page.locator('ion-checkbox').click();
+  await page.locator('ion-item-sliding').getByText('Estudio · 1 min · Completada',{exact:true}).waitFor();
+  await page.reload(); await page.locator('ion-item-sliding').getByText('Repasar rutas',{exact:true}).waitFor();
+  results.push({test:'Editar, completar y persistir al recargar',result:'passed'});
+  await page.locator('ion-item-sliding').getByText('Iniciar',{exact:true}).click();
+  await page.getByText('Pausar',{exact:true}).scrollIntoViewIfNeeded();
+  await page.waitForFunction(()=>document.querySelector('[data-testid=tiempo]').textContent!=='01:00');
+  await page.getByText('Pausar',{exact:true}).click();
+  const paused=await page.locator('[data-testid=tiempo]').textContent(); await page.waitForTimeout(1100);
+  if(await page.locator('[data-testid=tiempo]').textContent()!==paused)throw Error('Temporizador no pausó');
+  await page.getByText('Continuar',{exact:true}).click(); await page.getByText('Pausar',{exact:true}).click();
+  await page.getByText('Reiniciar',{exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('[data-testid=tiempo]').textContent==='01:00');
+  results.push({test:'Temporizador: inicio, pausa, continuación y reinicio',result:'passed'});
+  await page.context().setOffline(true);
+  await page.locator('ion-input input').nth(0).fill('Lectura sin conexión'); await page.getByText('Agregar sesión',{exact:true}).click();
+  await page.locator('ion-item-sliding').getByText('Lectura sin conexión',{exact:true}).waitFor();
+  await page.context().setOffline(false); await page.reload();
+  await page.locator('ion-item-sliding').getByText('Lectura sin conexión',{exact:true}).waitFor();
+  results.push({test:'Crear offline en app abierta y conservar después de recarga online',result:'passed'});
+  await page.screenshot({path:repo+'/documentacion/capturas/m2/01-plan.png',fullPage:true});
+  const item=page.locator('ion-item-sliding').first(); await item.scrollIntoViewIfNeeded();
+  const box=await item.boundingBox();
+  await page.mouse.move(box.x+box.width-30,box.y+box.height/2);await page.mouse.down();await page.mouse.move(box.x+20,box.y+box.height/2,{steps:15});await page.mouse.up();
+  await item.getByText('Eliminar',{exact:true}).click();
+  await page.locator('ion-alert').getByText('Eliminar',{exact:true}).click();
+  await page.locator('ion-item-sliding').getByText('Repasar rutas',{exact:true}).waitFor({state:'hidden'});
+  results.push({test:'Deslizar y eliminar con confirmación',result:'passed'});
+  await page.screenshot({path:repo+'/documentacion/capturas/m2/02-despues-eliminar.png'});
+  await page.evaluate(async()=>{window.__refreshCount=0;document.querySelector('ion-refresher').addEventListener('ionRefresh',()=>window.__refreshCount++);await document.querySelector('ion-content').scrollToTop(0);});
+  const cdp=await page.context().newCDPSession(page);
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:150,y:100}]});
+  for(let y=115;y<=400;y+=15)await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:150,y}]});
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await page.waitForFunction(()=>window.__refreshCount>0,{},{timeout:5000});
+  results.push({test:'Pull-to-refresh por gesto táctil',result:'passed'});
+  const data={browser:await browser.version(),results,pageErrors:errors};
+  fs.writeFileSync(repo+'/documentacion/evidencias/m2/pruebas.json',JSON.stringify(data,null,2));console.log(JSON.stringify(data));
+  if(errors.length)throw Error('Errores de ejecución');
+ }finally{if(browser)await browser.close();server.kill();}
+})().catch(e=>{console.error(e);process.exitCode=1});

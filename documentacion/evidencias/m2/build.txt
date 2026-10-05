@@ -1,0 +1,48 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> app@0.0.1 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names                  |  Raw size | Estimated transfer size
+main-LTWS7OSE.js    | main                   | 572.71 kB |               139.32 kB
+chunk-DrqOXs9B.js   | -                      |  53.23 kB |                16.43 kB
+styles-JKZMTOLL.css | styles                 |  46.60 kB |                 5.49 kB
+chunk-QO3bPz4H.js   | -                      |   3.78 kB |                 1.51 kB
+chunk-DKqF8VjK.js   | -                      |   2.56 kB |               725 bytes
+chunk-DSvLd-Er.js   | -                      |   2.24 kB |                 1.04 kB
+chunk-CCT0nc8p.js   | -                      |   1.94 kB |               764 bytes
+chunk-BM0oDcKh.js   | -                      |   1.33 kB |               583 bytes
+chunk-C0bGW85Y.js   | -                      | 223 bytes |               223 bytes
+chunk-C3vFjYKF.js   | -                      | 190 bytes |               190 bytes
+
+                    | Initial total          | 684.79 kB |               166.27 kB
+
+Lazy chunk files    | Names                  |  Raw size | Estimated transfer size
+chunk-C0LE0Pmk.js   | plan-module            |  62.45 kB |                12.21 kB
+chunk-CVJZr6rW2.js  | ion-datetime-entry     |  57.79 kB |                11.69 kB
+chunk-BBLSs5d_.js   | ion-item_8-entry       |  57.31 kB |                 7.81 kB
+chunk-YKdlNCh-.js   | ion-select_3-entry     |  55.05 kB |                 9.51 kB
+chunk-ZyXWqAuc2.js  | ion-textarea-entry     |  46.64 kB |                 5.87 kB
+chunk-BFQZTgfT.js   | ion-alert-entry        |  44.64 kB |                 7.21 kB
+chunk-CUP9CoBC2.js  | ion-modal-entry        |  43.83 kB |                10.43 kB
+chunk-C9bcMDVU2.js  | ion-input-entry        |  43.39 kB |                 6.37 kB
+chunk-C0vx5IpC2.js  | ion-app_8-entry        |  43.04 kB |                 9.64 kB
+chunk-DiOglc0N.js   | ion-action-sheet-entry |  31.74 kB |                 5.46 kB
+chunk-DCZSEmEF.js   | ion-range-entry        |  30.91 kB |                 6.05 kB
+chunk-BGPvYw8H.js   | ion-segment_2-entry    |  29.29 kB |                 5.51 kB
+chunk-ByHDncRc.js   | ion-button_2-entry     |  28.24 kB |                 5.62 kB
+chunk-DEsLODg3.js   | ion-popover-entry      |  25.80 kB |                 6.45 kB
+chunk-QzpDcodd.js   | ion-refresher_2-entry  |  25.64 kB |                 5.47 kB
+...and 88 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [3.404 seconds] - 2026-10-05T19:23:00.928Z
+
+▲ [WARNING] Module 'localforage' used by 'node_modules/@ionic/storage/dist/esm/index.js' is not ESM
+
+  CommonJS or AMD dependencies can cause optimization bailouts.
+  For more information see: https://angular.dev/tools/cli/build#configuring-commonjs-dependencies
+
+
+Output location: /workspace/scratch/1d8db17a3d27/StudyTime_GrupoP/app/www
